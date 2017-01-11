@@ -9,6 +9,6 @@
 
 # React Noob Quiz Application
 
-## Deployed with ***ZEIT NOW**
+## Deployed with ***ZEIT NOW***
 
 ### Find it at https://react-quiz-rsevptvjit.now.sh/app
