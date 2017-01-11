@@ -4,6 +4,8 @@ import React, {
 from 'react';
 import Nav from './navigation/nav';
 import QuestionList from './quiz/QuestionList'
+import ScoreBox from './quiz/ScoreBox'
+import Results from './quiz/Results'
 
 class App extends Component {
 	constructor(props) {
@@ -57,7 +59,31 @@ class App extends Component {
 		}
 	}
 
+	setCurrent(current) {
+		this.setState({
+			current
+		});
+	}
+
+	setScore(score) {
+		
+			this.setState({
+				score
+			});
+		
+	
+	}
+
+
+
 	render() {
+		if (this.state.current > this.state.questions.length) {
+			var scorebox = ''
+			var results = <Results {...this.state} />
+		} else {
+			var scorebox = <ScoreBox {...this.state}/>
+			var results = ''
+		}
 		return (
 			<div>
 				<Nav/>
@@ -67,7 +93,9 @@ class App extends Component {
 							<h1>React Quiz</h1>
 							<p className="lead">A simple ReactJS Quiz Application</p>
 							<hr />
-							<QuestionList {...this.state} />
+							{scorebox}
+							<QuestionList {...this.state} setCurrent={this.setCurrent.bind(this)} setScore={this.setScore.bind(this)}  />
+							{results}
 						</div>
 					</div>
 				</div>	
