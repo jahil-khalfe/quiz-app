@@ -34,7 +34,7 @@
   "dependencies": {
     "now": "^1.0.0",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^16.0.1"
   },
   "bugs": {
     "url": "https://github.com/cybot1711/quiz-app/issues"
